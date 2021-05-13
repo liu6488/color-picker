@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>取色器</title>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+    }
+    .app-container{
+      padding: 4px;
+    }
+
+    #colorShow{
+      margin: 1%;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+      <input type="color" name="" id="">
+      <div id="colorShow"></div>
+      <span id="value"></span>
+  </div>
+
+  <script>
+    // 获取到颜色选择器EL
+    const colorPicker = document.querySelector('input')
+    // 获取到颜色展示EL
+    const colorShow = document.querySelector('#colorShow')
+    // 获取到值的输出EL
+    const valuePrint = document.querySelector('#value')
+
+    colorPicker.addEventListener('change',(e)=>{
+      // console.log(e.target.value);
+      setColor(e.target.value)
+    })
+
+    function setColor(value){
+      console.log(value);
+      colorShow.style.background = value
+      valuePrint.innerHTML = value
+    }
+  </script>
+</body>
+</html>
